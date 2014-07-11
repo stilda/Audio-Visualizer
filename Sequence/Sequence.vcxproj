@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8182B0F3-7194-47D3-AC12-DC1A035D9D6D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Sequence</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Kiev\Sasha\repo\common;D:\Kiev\Sasha\proj\boost_1_49_0;$(SolutionDir)\..\extlibs\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\Kiev\Sasha\proj\boost_1_49_0\stage\lib;$(SolutionDir)\..\extlibs\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winmm.lib;opengl32.lib;glu32.lib;glaux.lib;winmm.lib;opengl32.lib;glu32.lib;glaux.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Kiev\Sasha\repo\common;D:\Kiev\Sasha\proj\boost_1_49_0;$(SolutionDir)\..\extlibs\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\Kiev\Sasha\proj\boost_1_49_0\stage\lib;$(SolutionDir)\..\extlibs\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winmm.lib;opengl32.lib;glu32.lib;glaux.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\common\GlUtils\glDrawUtils.cpp" />
+    <ClCompile Include="..\..\common\GlUtils\GlTextUtils.cpp" />
+    <ClCompile Include="Converters\ConverterBreakOn3bitsNumbers.cpp" />
+    <ClCompile Include="Converters\ConverterColorMatrixToMeanColorMatrix.cpp" />
+    <ClCompile Include="Converters\ConverterColorsToColorMatrix.cpp" />
+    <ClCompile Include="Converters\ConverterFilter.cpp" />
+    <ClCompile Include="Converters\ConverterFloatToColors.cpp" />
+    <ClCompile Include="Converters\ConverterFloatToFloatDerivate.cpp" />
+    <ClCompile Include="Converters\ConverterFloatToFloatHistogram.cpp" />
+    <ClCompile Include="converters\ConverterFloatToMeanFloat.cpp" />
+    <ClCompile Include="Converters\ConverterFloatToMovingMean.cpp" />
+    <ClCompile Include="Converters\ConverterFunction.cpp" />
+    <ClCompile Include="Converters\ConverterIntTo-1+1.cpp" />
+    <ClCompile Include="converters\ConverterIntToFloat.cpp" />
+    <ClCompile Include="Converters\ConverterMixAllToOne.cpp" />
+    <ClCompile Include="converters\ConverterTree.cpp" />
+    <ClCompile Include="Converters\ConverterTreeBuilder.cpp" />
+    <ClCompile Include="Converters\ConverterM1P1ToMeanStatistics.cpp" />
+    <ClCompile Include="DataConsumer\GlDataConsumer.cpp" />
+    <ClCompile Include="DataConsumer\TestDataConsumer.cpp" />
+    <ClCompile Include="DataSupplier\MicDataSupplier.cpp" />
+    <ClCompile Include="DataSupplier\TestDataSupplier.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="StorageCursor.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
+    <ClCompile Include="Visualizers\Visualizer.cpp" />
+    <ClCompile Include="Visualizers\VisualizerColorMatrix.cpp" />
+    <ClCompile Include="Visualizers\VisualizerColorStrip.cpp" />
+    <ClCompile Include="Visualizers\VisualizerFFT.cpp" />
+    <ClCompile Include="Visualizers\VisualizerListBuilder.cpp" />
+    <ClCompile Include="Visualizers\VisualizerMultiDimSignal.cpp" />
+    <ClCompile Include="Visualizers\VisualizerPlainSignal.cpp" />
+    <ClCompile Include="Visualizers\VisualizerPlot1D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\Geometry\GeometryStructures2D.h" />
+    <ClInclude Include="..\..\common\Geometry\Vector3.h" />
+    <ClInclude Include="..\..\common\GlUtils\glDrawUtils.h" />
+    <ClInclude Include="..\..\common\GlUtils\GlTextUtils.h" />
+    <ClInclude Include="converters\Converter.h" />
+    <ClInclude Include="Converters\ConverterBreakOn3bitsNumbers.h" />
+    <ClInclude Include="Converters\ConverterColorMatrixToMeanColorMatrix.h" />
+    <ClInclude Include="Converters\ConverterColorsToColorMatrix.h" />
+    <ClInclude Include="Converters\ConverterFilter.h" />
+    <ClInclude Include="Converters\ConverterFloatToColors.h" />
+    <ClInclude Include="Converters\ConverterFloatToFloatDerivate.h" />
+    <ClInclude Include="Converters\ConverterFloatToFloatHistogram.h" />
+    <ClInclude Include="converters\ConverterFloatToMeanFloat.h" />
+    <ClInclude Include="Converters\ConverterFloatToMovingMean.h" />
+    <ClInclude Include="Converters\ConverterFunction.h" />
+    <ClInclude Include="Converters\ConverterIntTo-1+1.h" />
+    <ClInclude Include="converters\ConverterIntToFloat.h" />
+    <ClInclude Include="Converters\ConverterM1P1ToMeanStatistics.h" />
+    <ClInclude Include="Converters\ConverterMixAllToOne.h" />
+    <ClInclude Include="converters\ConverterTree.h" />
+    <ClInclude Include="Converters\ConverterTreeBuilder.h" />
+    <ClInclude Include="DataConsumer\DataConsumer.h" />
+    <ClInclude Include="DataConsumer\GlDataConsumer.h" />
+    <ClInclude Include="DataConsumer\TestDataConsumer.h" />
+    <ClInclude Include="DataSupplier\DataSupplier.h" />
+    <ClInclude Include="DataSupplier\MicDataSupplier.h" />
+    <ClInclude Include="DataSupplier\TestDataSupplier.h" />
+    <ClInclude Include="StorageCursor.h" />
+    <ClInclude Include="Storage.h" />
+    <ClInclude Include="UserInterface.h" />
+    <ClInclude Include="Visualizers\Visualizer.h" />
+    <ClInclude Include="Visualizers\VisualizerColorMatrix.h" />
+    <ClInclude Include="Visualizers\VisualizerColorStrip.h" />
+    <ClInclude Include="Visualizers\VisualizerFFT.h" />
+    <ClInclude Include="Visualizers\VisualizerMultiDimSignal.h" />
+    <ClInclude Include="Visualizers\VisualizerPlainSignal.h" />
+    <ClInclude Include="Visualizers\VisualizerListBuilder.h" />
+    <ClInclude Include="Visualizers\VisualizerPlot1D.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
